@@ -1,0 +1,8 @@
+a02ex00	information
+a02ex01_a myBooleanClass
+a02ex03_a menu
+a02ex03_b comida
+a02ex03_c pao
+a02ex03_d bolacha
+a02ex03_e bolachaRecheada
+a02ex03   func
