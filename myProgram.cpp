@@ -2,9 +2,8 @@
    FT - Faculdade de Tecnologia
    Limeira - SP
    Prof. Dr. Andre F. de Angelis
-   Mar/2016
+   Maio/2015
 */
-
 #include <string>
 #include <vector>
 #include <iostream>
@@ -21,27 +20,10 @@
 #include "cheese.hpp"
 #include "cottageCheese.hpp"
 #include "filledWafer.hpp"
-#include "func.hpp"
+#include "myProgram.hpp"
 
 
-/* DANGER: A LOT OF GLOBAL VARIABLES !!! (OBJECTS & STRUCTURES) */
-
-MyBooleanClass * verboseMode       = NULL;
-MyBooleanClass * shortMessageMode  = NULL;
-
-vector<Food *> myMainList;
-   
-int main(int argc, char* argv[])
-   {
-   verifyArguments(argc, argv);
-   myMainList.clear();
-   Information::wellcome("C++ Program " + string(argv[0]) + " running!", shortMessageMode->getStatus());
-   process();
-   Information::bye(shortMessageMode->getStatus());
-   clearAll();
-   };
-
-void process()
+void MyProgram::process()
    {
    vector<string> opcoes({ "Exit", "List Database", "Insert Items" });
    Menu menu("Main Menu", opcoes);
@@ -59,7 +41,7 @@ void process()
       };
    };
 
-void clearAll()   // está errada ! corrigir !!!!
+void MyProgram::clearAll()   // está errada ! corrigir !!!!
    {
    myMainList.clear();
 
@@ -78,7 +60,7 @@ void clearAll()   // está errada ! corrigir !!!!
    shortMessageMode = NULL;
    };
 
-void listItems()
+void MyProgram::listItems()
    {
    double total = 0.00;
       
@@ -94,7 +76,7 @@ void listItems()
    cout << "  Total cost: US$ " << fixed << setprecision(2) << total << endl;
    };
 
-void insertItems()
+void MyProgram::insertItems()
    {
    cout << "------------------------------\nInset New Items:\n------------------------------\n";
   
@@ -118,7 +100,7 @@ void insertItems()
       };
    };
 
-void insertBread()
+void MyProgram::insertBread()
    {
    Bread * bread;
    string buffer;
@@ -138,7 +120,7 @@ void insertBread()
    cout << endl << bread->getDescricao() << " - US$ " << fixed << setprecision(2) << bread->getValor() << endl;   
    };
    
-   void insertCottageCheese()
+   void MyProgram::insertCottageCheese()
    {
    CottageCheese * cottageCheese;
    string buffer;
@@ -160,7 +142,7 @@ void insertBread()
    cout << endl << cottageCheese->getDescricao() << " - US$ " << fixed << setprecision(2) << cottageCheese->getValor() << endl;   
    };
    
-   void insertMortadella()
+   void MyProgram::insertMortadella()
    {
    Mortadella * mortadella;
    string buffer;
@@ -180,7 +162,7 @@ void insertBread()
    cout << endl << mortadella->getDescricao() << " - US$ " << fixed << setprecision(2) << mortadella->getValor() << endl;   
    };
    
-   void insertHam()
+   void MyProgram::insertHam()
    {
    Ham * ham;
    string buffer;
@@ -201,7 +183,7 @@ void insertBread()
    };
    
    
-  void insertCheese()
+  void MyProgram::insertCheese()
    {
    Cheese * cheese;
    string buffer;
@@ -221,7 +203,7 @@ void insertBread()
    cout << endl << cheese->getDescricao() << " - US$ " << fixed << setprecision(2) << cheese->getValor() << endl;   
    };
    
-void insertCracker()
+void MyProgram::insertCracker()
    {
    Cracker * cracker;
    string buffer;
@@ -241,7 +223,7 @@ void insertCracker()
    cout << endl << cracker->getDescricao() << " - US$ " << fixed << setprecision(2) << cracker->getValor() << endl;   
    };
 
-void insertFilledWafer()
+void MyProgram::insertFilledWafer()
    {
    FilledWafer * filledWafer;
    string buffer;
@@ -263,22 +245,28 @@ void insertFilledWafer()
    cout << endl << filledWafer->getDescricao() << " - US$ " << fixed << setprecision(2) << filledWafer->getValor() << endl;   
    };
   
-void verifyArguments(int argc, char* argv[])
-   {
-   if(verboseMode)                     { delete verboseMode;         }; 
-   if(shortMessageMode)                { delete shortMessageMode;    };  
 
-   verboseMode      = NULL;
-   shortMessageMode = NULL;
    
-   for(int count = 1; count < argc; count++)
-      {
-      if(string(argv[count]) == "-v") { verboseMode      = new MyBooleanClass(true); };
-      if(string(argv[count]) == "-s") { shortMessageMode = new MyBooleanClass(true); };
-      };
-   
-   if(!verboseMode)                    { verboseMode      = new MyBooleanClass();     };  // default is false
-   if(!shortMessageMode)               { shortMessageMode = new MyBooleanClass();     };  // default is false
-   }
+    const bool MyProgram::getVerboseMode(void){
+		return verboseMode->getStatus();
+	}
+	void MyProgram::setVerboseMode(bool b){
+		verboseMode = new MyBooleanClass(b);
+	}
+    const bool MyProgram::getShortMessageMode(void){
+		return shortMessageMode->getStatus();
+	}
+	void MyProgram::setShortMessageMode(bool b){
+		shortMessageMode = new MyBooleanClass(b);
+	}
+	
+	void MyProgram::start(){
+		myMainList.clear();
+		//Information::wellcome("C++ Program " + string(argv[0]) + " running!", shortMessageMode->getStatus());
+		process();
+		Information::bye(shortMessageMode->getStatus());
+		clearAll();
+	}
 
+   
 /* fim de arquivo */
