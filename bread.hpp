@@ -5,21 +5,22 @@
    Maio/2015
 */
 
-#ifndef A02EX03_E_H
-   #define A02EX03_E_H
+#ifndef A02EX03_C_H
+   #define A02EX03_C_H
 
 #include <string>
-#include "bolacha.hpp"
+#include "food.hpp"
 
 using namespace std;
 
-class BolachaRecheada : public Bolacha
+class Bread : public Food
    {
    private:
-      string recheio;
+      string tipo;
+      float peso;
       
    public:
-      BolachaRecheada(string, string, int, double);
+      Bread(string, float, double);
       virtual string getDescricao();
    };
    

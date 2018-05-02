@@ -5,22 +5,21 @@
    Maio/2015
 */
 
-#ifndef A02EX03_C_H
-   #define A02EX03_C_H
+#ifndef CC
+   #define CC
 
 #include <string>
-#include "comida.hpp"
+#include "cheese.hpp"
 
 using namespace std;
 
-class Pao : public Comida
+class CottageCheese : public Cheese
    {
    private:
-      string tipo;
-      float peso;
+      string cotagge;
       
    public:
-      Pao(string, float, double);
+      CottageCheese(string, string, float, double);
       virtual string getDescricao();
    };
    

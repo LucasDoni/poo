@@ -6,18 +6,18 @@
 */
 
 #include <string>
-#include "comida.hpp"
-#include "pao.hpp"
+#include "food.hpp"
+#include "bread.hpp"
 
 using namespace std;
 
-Pao::Pao(string tipo, float peso, double valor) : Comida(valor)
+Bread::Bread(string tipo, float peso, double valor) : Food(valor)
    {
    this->tipo = tipo;
    this->peso = peso;
    };
    
-string Pao::getDescricao()
+string Bread::getDescricao()
    { 
    return ("Pao " + tipo + " - " + to_string(peso) + " Kg."); 
    };

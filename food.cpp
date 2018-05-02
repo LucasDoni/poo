@@ -5,25 +5,19 @@
    Maio/2015
 */
 
-#ifndef A02EX03_B_H
-   #define A02EX03_B_H
-
 #include <string>
+#include "food.hpp"
 
 using namespace std;
 
-class Comida
+Food::Food(double valor)
    {
-   protected:
-      double valor;
-      
-   public:
-      Comida(double);
-      virtual double getValor();
-
-      virtual string getDescricao() = 0;
+   this->valor = valor;
    };
    
-#endif
+double Food::getValor()
+   { 
+   return (valor); 
+   };
    
 /* fim de arquivo */

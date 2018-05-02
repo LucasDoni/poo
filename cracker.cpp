@@ -6,18 +6,18 @@
 */
 
 #include <string>
-#include "comida.hpp"
-#include "bolacha.hpp"
+#include "food.hpp"
+#include "cracker.hpp"
 
 using namespace std;
 
-Bolacha::Bolacha(string tipo, int unidades, double valor) : Comida(valor)
+Cracker::Cracker(string tipo, int unidades, double valor) : Food(valor)
    {
    this->tipo     = tipo;
    this->unidades = unidades;
    };
    
-string Bolacha::getDescricao()
+string Cracker::getDescricao()
    { 
    return ("Bolacha " + tipo + " - " + to_string(unidades) + " un/pacote."); 
    };

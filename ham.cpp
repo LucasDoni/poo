@@ -6,18 +6,20 @@
 */
 
 #include <string>
-#include "comida.hpp"
+#include "food.hpp"
+#include "ham.hpp"
 
 using namespace std;
 
-Comida::Comida(double valor)
+Ham::Ham(string tipo, float peso, double valor) : Food(valor)
    {
-   this->valor = valor;
+   this->tipo = tipo;
+   this->peso = peso;
    };
    
-double Comida::getValor()
+string Ham::getDescricao()
    { 
-   return (valor); 
+   return ("Ham " + tipo + " - " + to_string(peso) + " Kg."); 
    };
    
 /* fim de arquivo */

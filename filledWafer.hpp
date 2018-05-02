@@ -5,22 +5,21 @@
    Maio/2015
 */
 
-#ifndef A02EX03_D_H
-   #define A02EX03_D_H
+#ifndef A02EX03_E_H
+   #define A02EX03_E_H
 
 #include <string>
-#include "comida.hpp"
+#include "cracker.hpp"
 
 using namespace std;
 
-class Bolacha : public Comida
+class FilledWafer : public Cracker
    {
    private:
-      string tipo;
-      int    unidades;
+      string recheio;
       
    public:
-      Bolacha(string, int, double);
+      FilledWafer(string, string, int, double);
       virtual string getDescricao();
    };
    
