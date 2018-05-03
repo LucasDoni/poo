@@ -20,6 +20,14 @@
 #include "cheese.hpp"
 #include "cottageCheese.hpp"
 #include "filledWafer.hpp"
+#include "liquid.hpp"
+#include "milk.hpp"
+#include "soda.hpp"
+#include "water.hpp"
+#include "brahma.hpp"
+#include "budweiser.hpp"
+#include "corona.hpp"
+#include "stellaArtois.hpp"
 #include "myProgram.hpp"
 
 
@@ -80,7 +88,7 @@ void MyProgram::insertItems()
    {
    cout << "------------------------------\nInset New Items:\n------------------------------\n";
   
-   Menu menu("Insert Items", { "Exit", "Bread", "Cheese", "Cottage Cheese", "Cracker", "Filled Wafer", "Ham", "Mortadella" });
+   Menu menu("Insert Items", { "Exit", "Bread", "Cheese", "Cottage Cheese", "Cracker", "Filled Wafer", "Ham", "Mortadella","Milk", "Water", "Soda", "Beer" });
    int escolha = -1;
    
    while(escolha)
@@ -96,6 +104,11 @@ void MyProgram::insertItems()
  	 case 5: { insertFilledWafer();  }; break;
  	 case 6: { insertHam();          }; break;
  	 case 7: { insertMortadella();   }; break;
+            case 8: { insertMilk();        }; break;
+            case 9: { insertWater();       }; break;
+            case 10:{ insertSoda();        }; break;
+            case 11:{ insertBeer();        }; break;
+
          };
       };
    };
@@ -268,5 +281,182 @@ void MyProgram::insertFilledWafer()
 		clearAll();
 	}
 
-   
+void MyProgram::insertMilk()
+{
+   Milk * milk;
+   string buffer;
+   double ml;
+   int    units;
+   double cost;
+
+   cout << "------------------------------\nInsert Milk:\n------------------------------\n";
+   cout << "ML ......: "; getline(cin, buffer); ml   = stod(buffer);
+   cout << "Units .....: "; getline(cin, buffer); units = stoi(buffer);
+   cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
+   cin.clear();
+
+   milk = new Milk(ml, units, cost);
+   myMainList.insert(myMainList.end(), milk);
+
+   cout << endl << milk->getDescricao() << " - US$ " << fixed << setprecision(2) << milk->getValor() << endl;
+};
+
+
+void MyProgram::insertWater()
+{
+   Water * water;
+   string buffer;
+   double ml;
+   int    units;
+   double cost;
+
+   cout << "------------------------------\nInsert Milk:\n------------------------------\n";
+   cout << "ML ......: "; getline(cin, buffer); ml   = stod(buffer);
+   cout << "Units .....: "; getline(cin, buffer); units = stoi(buffer);
+   cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
+   cin.clear();
+
+   water = new Water(ml, units, cost);
+   myMainList.insert(myMainList.end(), water);
+
+   cout << endl << water->getDescricao() << " - US$ " << fixed << setprecision(2) << water->getValor() << endl;
+};
+
+
+void MyProgram::insertSoda()
+{
+   Soda * soda;
+   string buffer;
+   double ml;
+   int    units;
+   double cost;
+
+   cout << "------------------------------\nInsert Milk:\n------------------------------\n";
+   cout << "ML ......: "; getline(cin, buffer); ml   = stod(buffer);
+   cout << "Units .....: "; getline(cin, buffer); units = stoi(buffer);
+   cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
+   cin.clear();
+
+   soda = new Soda(ml, units, cost);
+   myMainList.insert(myMainList.end(), soda);
+
+   cout << endl << soda->getDescricao() << " - US$ " << fixed << setprecision(2) << soda->getValor() << endl;
+};
+
+void MyProgram::insertBeer()
+{
+
+
+   cout << "------------------------------\nChoose a beer:\n--------------------------------\n";
+
+   Menu menu("Beers", {
+           "Exit",
+           "Brahma", "Budweiser", "Corona", "Stella Artois"
+   });
+   int escolha = -1;
+
+   while(escolha)
+   {
+      escolha = menu.getEscolha();
+
+      switch(escolha)
+      {
+         case 1: { insertBrahma();       }; break;
+         case 2: { insertBudweiser();    }; break;
+         case 3: { insertCorona();       }; break;
+         case 4: { insertStellaArtois(); }; break;
+      };
+   };
+};
+
+
+
+void MyProgram::insertBrahma()
+{
+   Brahma * brahma;
+   string buffer;
+   double ml;
+   int    units;
+   double cost;
+
+   cout << "------------------------------\nInsert Milk:\n------------------------------\n";
+   cout << "ML ......: "; getline(cin, buffer); ml   = stod(buffer);
+   cout << "Units .....: "; getline(cin, buffer); units = stoi(buffer);
+   cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
+   cin.clear();
+
+   brahma = new Brahma(ml, units, cost);
+   myMainList.insert(myMainList.end(), brahma);
+
+   cout << endl << brahma->getDescricao() << " - US$ " << fixed << setprecision(2) << brahma->getValor() << endl;
+};
+
+
+
+void MyProgram::insertBudweiser()
+{
+   Budweiser * budweiser;
+   string buffer;
+   double ml;
+   int    units;
+   double cost;
+
+   cout << "------------------------------\nInsert Milk:\n------------------------------\n";
+   cout << "ML ......: "; getline(cin, buffer); ml   = stod(buffer);
+   cout << "Units .....: "; getline(cin, buffer); units = stoi(buffer);
+   cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
+   cin.clear();
+
+   budweiser = new Budweiser(ml, units, cost);
+   myMainList.insert(myMainList.end(), budweiser);
+
+   cout << endl << budweiser->getDescricao() << " - US$ " << fixed << setprecision(2) << budweiser->getValor() << endl;
+};
+
+
+
+void MyProgram::insertCorona()
+{
+   Corona * corona;
+   string buffer;
+   double ml;
+   int    units;
+   double cost;
+
+   cout << "------------------------------\nInsert Milk:\n------------------------------\n";
+   cout << "ML ......: "; getline(cin, buffer); ml   = stod(buffer);
+   cout << "Units .....: "; getline(cin, buffer); units = stoi(buffer);
+   cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
+   cin.clear();
+
+   corona = new Corona(ml, units, cost);
+   myMainList.insert(myMainList.end(), corona);
+
+   cout << endl << corona->getDescricao() << " - US$ " << fixed << setprecision(2) << corona->getValor() << endl;
+};
+
+
+void MyProgram::insertStellaArtois()
+{
+   StellaArtois * stellaArtois;
+   string buffer;
+   double ml;
+   int    units;
+   double cost;
+
+   cout << "------------------------------\nInsert Milk:\n------------------------------\n";
+   cout << "ML ......: "; getline(cin, buffer); ml   = stod(buffer);
+   cout << "Units .....: "; getline(cin, buffer); units = stoi(buffer);
+   cout << "Cost ......: "; getline(cin, buffer); cost   = stod(buffer);
+   cin.clear();
+
+   stellaArtois = new StellaArtois(ml, units, cost);
+   myMainList.insert(myMainList.end(), stellaArtois);
+
+   cout << endl << stellaArtois->getDescricao() << " - US$ " << fixed << setprecision(2) << stellaArtois->getValor() << endl;
+};
+
+
+
+
 /* fim de arquivo */
