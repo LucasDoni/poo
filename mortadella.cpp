@@ -12,14 +12,14 @@
 using namespace std;
 
 Mortadella::Mortadella(string tipo, float peso, double valor) : Food(valor)
-   {
-   this->tipo = tipo;
-   this->peso = peso;
-   };
-   
+{
+    this->tipo = tipo;
+    this->peso = peso;
+};
+
 string Mortadella::getDescricao()
-   { 
-   return ("Mortadella " + tipo + " - " + to_string(peso) + " Kg."); 
-   };
-   
+{ 
+    return ("Mortadella " + tipo + " - " + to_string(peso) + " Kg."); 
+};
+
 /* fim de arquivo */

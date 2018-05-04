@@ -5,7 +5,7 @@
    Maio/2015
 */
 #ifndef WAT
-    #define WAT
+#define WAT
 #include <string>
 #include "liquid.hpp"
 
@@ -19,5 +19,5 @@ class Water : public Liquid
 };
 
 #endif
-   
+
 /* fim de arquivo */

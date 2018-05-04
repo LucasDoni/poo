@@ -9,14 +9,14 @@
 
 using namespace std;
 
-Brahma::Brahma(double ml, int unidades, double valor): Beer(ml,unidades,valor)
+Brahma::Brahma(double ml, int unidades, double valor, string m): Beer(ml,unidades,valor), tipo(m)
 {
 
 };
 
 string Brahma::getDescricao()
 {
-   return ("Brahma " + to_string(ml) + " - " + to_string(unidades) + " un/pacote.");
+    return ("Brahma " + to_string(ml) + " ml - " + to_string(unidades) + " units" + " tipo:" + tipo);
 };
-   
+
 /* fim de arquivo */

@@ -8,14 +8,14 @@
 #include "corona.hpp"
 
 
-Corona::Corona(double ml, int unidades, double valor): Beer(ml,unidades,valor)
+Corona::Corona(double ml, int unidades, double valor, string m): Beer(ml,unidades,valor), tipo(m)
 {
 
 };
 
 string Corona::getDescricao()
 {
-   return ("Water " + to_string(ml) + " - " + to_string(unidades) + " un/pacote.");
+    return ("Corona " + to_string(ml) + " ml - " + to_string(unidades) + " units" + " tipo:" + tipo);
 };
-   
+
 /* fim de arquivo */

@@ -8,14 +8,14 @@
 #include "stellaArtois.hpp"
 
 
-StellaArtois::StellaArtois(double ml, int unidades, double valor): Beer(ml,unidades,valor)
+StellaArtois::StellaArtois(double ml, int unidades, double valor, string s): Beer(ml,unidades,valor), tipo(s)
 {
 
 };
 
 string StellaArtois::getDescricao()
 {
-    return ("StellaArtois" + to_string(ml) + " - " + to_string(unidades) + " un/pacote.");
+    return ("StellaArtois " + to_string(ml) + " ml - " + to_string(unidades) + " units" + " tipo:" + tipo);
 };
-   
+
 /* fim de arquivo */

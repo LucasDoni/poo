@@ -10,13 +10,13 @@
 using namespace std;
 
 Water::Water(double ml, int unidades, double valor): Liquid(ml,unidades,valor)
-   {
+{
 
-   };
-   
+};
+
 string Water::getDescricao()
-   { 
-      return ("Water " + to_string(ml) + " - " + to_string(unidades) + " un/pacote.");
-   };
-   
+{ 
+    return ("Water " + to_string(ml) + "ml - " + to_string(unidades) + " units");
+};
+
 /* fim de arquivo */

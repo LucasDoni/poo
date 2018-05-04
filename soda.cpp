@@ -10,13 +10,13 @@
 using namespace std;
 
 Soda::Soda(double ml, int unidades, double valor): Liquid(ml,unidades,valor)
-   {
+{
 
-   };
-   
+};
+
 string Soda::getDescricao()
-   { 
-   return ("Soda " + to_string(ml) + " - " + to_string(unidades) + " un/pacote.");
-   };
-   
+{ 
+    return ("Soda " + to_string(ml) + "ml - " + to_string(unidades) + " units");
+};
+
 /* fim de arquivo */

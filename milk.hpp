@@ -5,6 +5,9 @@
    Maio/2015
 */
 
+#ifndef MILK_H
+#define MILK_H
+
 #include <string>
 #include "liquid.hpp"
 
@@ -16,5 +19,7 @@ class Milk: public Liquid
       Milk(double, int, double);
 	  virtual string getDescricao();
 };
-   
+
+#endif
+
 /* fim de arquivo */

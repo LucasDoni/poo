@@ -22,47 +22,47 @@ const string Information::getAuthor()      { return (author);      };
 const string Information::getDate()        { return (date);        };
 
 const void Information::wellcome()
-   {
-   wellcome("");
-   };
+{
+    wellcome("");
+};
 
 const void Information::wellcome(string message)
-   {
-   wellcome(message, false);
-   };
-   
+{
+    wellcome(message, false);
+};
+
 const void Information::wellcome(string message, bool shortMessage)
-   {
-   if(!shortMessage)
-      {
-      cout << decoration;
-      cout << Information::getInstitution() << "\n" << Information::getDept() << "\n";
-      cout << Information::getAuthor() << "\n" << Information::getDate() << "\n";
-      };
-   cout << decoration;
-   cout << message << endl;
-   };
-   
+{
+    if(!shortMessage)
+    {
+        cout << decoration;
+        cout << Information::getInstitution() << "\n" << Information::getDept() << "\n";
+        cout << Information::getAuthor() << "\n" << Information::getDate() << "\n";
+    };
+    cout << decoration;
+    cout << message << endl;
+};
+
 const void Information::bye()
-   {
-   cout << decoration;
-   cout << Information::getInstitution() << " - " << Information::getDept() << endl;
-   cout << decoration;
-   cout << "Mission accomplished! \n";
-   cout << decoration;
-   cout << "\n\n" << endl;
-   };
+{
+    cout << decoration;
+    cout << Information::getInstitution() << " - " << Information::getDept() << endl;
+    cout << decoration;
+    cout << "Mission accomplished! \n";
+    cout << decoration;
+    cout << "\n\n" << endl;
+};
 
 const void Information::bye(bool shortMessage)
-   {
-   if(shortMessage)
-      {
-      cout << "Mission accomplished! \n" << endl;
-      }
-   else
-      {
-      bye();
-      };
-   };
-   
+{
+    if(shortMessage)
+    {
+        cout << "Mission accomplished! \n" << endl;
+    }
+    else
+    {
+        bye();
+    };
+};
+
 /* fim de arquivo */

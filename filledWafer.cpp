@@ -12,13 +12,13 @@
 using namespace std;
 
 FilledWafer::FilledWafer(string tipo, string recheio, int unidades, double valor) : Cracker(tipo, unidades, valor)
-   {
-   this->recheio = recheio;
-   };
-   
+{
+    this->recheio = recheio;
+};
+
 string FilledWafer::getDescricao()
-   { 
-   return ("Bolacha Recheada com " + recheio + " - " + Cracker::getDescricao()); 
-   };
-   
+{ 
+    return ("Bolacha Recheada com " + recheio + " - " + Cracker::getDescricao()); 
+};
+
 /* fim de arquivo */

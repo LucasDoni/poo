@@ -5,10 +5,10 @@
 #include "liquid.hpp"
 
 Liquid::Liquid(double ml, int unidades, double valor):Food(valor){
-	this->ml = ml;
-	this->unidades = unidades;
+    this->ml = ml;
+    this->unidades = unidades;
 }
 
 double Liquid::getValor(){
-	return valor;
+    return valor;
 }

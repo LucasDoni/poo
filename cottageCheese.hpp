@@ -6,7 +6,7 @@
 */
 
 #ifndef CC
-   #define CC
+#define CC
 
 #include <string>
 #include "cheese.hpp"
@@ -16,13 +16,13 @@ using namespace std;
 class CottageCheese : public Cheese
    {
    private:
-      string cotagge;
-      
+      string marca;
+
    public:
-      CottageCheese(string, string, float, double);
+      CottageCheese(string, float, double, string);
       virtual string getDescricao();
    };
-   
+
 #endif
-   
+
 /* fim de arquivo */

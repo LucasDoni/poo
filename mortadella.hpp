@@ -6,7 +6,7 @@
 */
 
 #ifndef MORTADELLA
-   #define MORTADELLA
+#define MORTADELLA
 
 #include <string>
 #include "food.hpp"
@@ -18,12 +18,12 @@ class Mortadella : public Food
    private:
       string tipo;
       float peso;
-      
+
    public:
       Mortadella(string, float, double);
       virtual string getDescricao();
    };
-   
+
 #endif
-   
+
 /* fim de arquivo */

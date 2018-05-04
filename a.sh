@@ -1,1 +1,1 @@
-g++ -std=c++11 *.cpp -c -v
+clear; g++ -std=c++11 *.cpp -v -s -o a02ex03.exe; ./a02ex03.exe 

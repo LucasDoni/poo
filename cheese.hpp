@@ -6,7 +6,7 @@
 */
 
 #ifndef AA
-   #define AA
+#define AA
 
 #include <string>
 #include "food.hpp"
@@ -18,12 +18,12 @@ class Cheese : public Food
    private:
       string tipo;
       float peso;
-      
+
    public:
       Cheese(string, float, double);
       virtual string getDescricao();
    };
-   
+
 #endif
-   
+
 /* fim de arquivo */

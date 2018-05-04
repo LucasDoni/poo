@@ -6,7 +6,7 @@
 */
 
 #ifndef HAM
-   #define HAM
+#define HAM
 
 #include <string>
 #include "food.hpp"
@@ -18,12 +18,12 @@ class Ham : public Food
    private:
       string tipo;
       float peso;
-      
+
    public:
       Ham(string, float, double);
       virtual string getDescricao();
    };
-   
+
 #endif
-   
+
 /* fim de arquivo */

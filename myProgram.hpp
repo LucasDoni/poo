@@ -6,60 +6,54 @@
 */
 
 #ifndef DD
-   #define DD
+#define DD
 
-   #include "myBooleanClass.hpp"
-   #include <iostream>
-   #include <vector>
-   #include "food.hpp"
-   using namespace std;
-   
+#include "myBooleanClass.hpp"
+#include <iostream>
+#include <vector>
+#include "food.hpp"
+using namespace std;
+
 
 class MyProgram
-   {
-   private:
-       void process(void);
-	   
-	   void clearAll(void);
-	   
-	   void listItems(void);
-	   void insertItems(void);
-	   void insertBread(void);
-	   void insertCracker(void);
-	   void insertFilledWafer(void);
-	   void insertCheese(void);
-	   void insertHam(void);
-	   void insertMortadella(void);
-	   void insertCottageCheese(void);
+{
+    private:
+    void process(void);
 
-		void insertMilk(void);
-		void insertWater(void);
-		void insertSoda(void);
+    void clearAll(void);
+
+    void listItems(void);
+    void insertItems(void);
+    void insertBread(void);
+    void insertCracker(void);
+    void insertFilledWafer(void);
+    void insertCheese(void);
+    void insertHam(void);
+    void insertMortadella(void);
+    void insertCottageCheese(void);
+
+    void insertMilk(void);
+    void insertWater(void);
+    void insertSoda(void);
 
     void insertBeer(void);
     void insertBrahma(void);
     void insertBudweiser(void);
     void insertCorona(void);
     void insertStellaArtois(void);
-	MyBooleanClass * verboseMode       = NULL;
-	MyBooleanClass * shortMessageMode  = NULL;
+    MyBooleanClass * verboseMode       = NULL;
+    MyBooleanClass * shortMessageMode  = NULL;
 
-	vector<Food *> myMainList;
+    vector<Food *> myMainList;
 
-		
-	public:
 
-	
-		const bool getVerboseMode(void);
-		void setVerboseMode(bool);
-		const bool getShortMessageMode(void);
-		void setShortMessageMode(bool);
-		void start();
+    public:
 
-		void verifyArguments(int, char* []);
+    void start();
+    void verifyArguments(int, char* []);
 
 };
-   
+
 #endif
-   
+
 /* fim de arquivo */

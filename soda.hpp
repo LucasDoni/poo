@@ -5,6 +5,9 @@
    Maio/2015
 */
 
+#ifndef SODA_H
+#define SODA_H
+
 #include <string>
 #include "liquid.hpp"
 
@@ -16,5 +19,7 @@ class Soda : public Liquid
       Soda(double, int, double);
       virtual string getDescricao();
    };
-   
+
+#endif
+
 /* fim de arquivo */
