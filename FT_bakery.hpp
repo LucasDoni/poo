@@ -11,8 +11,6 @@
    #include "myProgram.hpp"
 
 
-void verifyArguments(int, char* [],MyProgram);
-   
 #endif
    
 /* fim de arquivo */

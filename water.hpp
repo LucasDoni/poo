@@ -4,7 +4,8 @@
    Prof. Dr. Andre F. de Angelis
    Maio/2015
 */
-
+#ifndef WAT
+    #define WAT
 #include <string>
 #include "liquid.hpp"
 
@@ -16,5 +17,7 @@ class Water : public Liquid
       Water(double, int, double);
       virtual string getDescricao();
 };
+
+#endif
    
 /* fim de arquivo */

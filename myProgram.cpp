@@ -49,23 +49,21 @@ void MyProgram::process()
       };
    };
 
-void MyProgram::clearAll()   // está errada ! corrigir !!!!
+void MyProgram::clearAll()
    {
-   myMainList.clear();
 
-   vector<Food *>::iterator scan = myMainList.begin();
-   
-   while(scan != myMainList.end())
-      {
-      delete (*scan);
-      *scan - NULL;
-      scan++;
-      };
+
+      for(int i = 0; i < myMainList.size(); i++){
+         Food * aux = myMainList[i];
+         myMainList[i] = NULL;
+         delete aux;
+      }
+
+      myMainList.clear();
 
    delete verboseMode;
    delete shortMessageMode;
-   verboseMode = NULL;
-   shortMessageMode = NULL;
+
    };
 
 void MyProgram::listItems()
@@ -264,13 +262,23 @@ void MyProgram::insertFilledWafer()
 		return verboseMode->getStatus();
 	}
 	void MyProgram::setVerboseMode(bool b){
-		verboseMode = new MyBooleanClass(b);
+       if(verboseMode != NULL)
+		    verboseMode = new MyBooleanClass(b);
+       else {
+          delete verboseMode;
+          verboseMode = new MyBooleanClass(b);
+       }
 	}
     const bool MyProgram::getShortMessageMode(void){
 		return shortMessageMode->getStatus();
 	}
 	void MyProgram::setShortMessageMode(bool b){
-		shortMessageMode = new MyBooleanClass(b);
+       if(shortMessageMode != NULL)
+          shortMessageMode = new MyBooleanClass(b);
+       else {
+          delete shortMessageMode;
+          shortMessageMode = new MyBooleanClass(b);
+       }
 	}
 	
 	void MyProgram::start(){
@@ -457,6 +465,22 @@ void MyProgram::insertStellaArtois()
 };
 
 
+void MyProgram::verifyArguments(int argc, char* argv[])
+{
+   if(verboseMode)                     { delete verboseMode;         };
+   if(shortMessageMode)                { delete shortMessageMode;    };
 
+   verboseMode      = NULL;
+   shortMessageMode = NULL;
+
+   for(int count = 1; count < argc; count++)
+   {
+      if(string(argv[count]) == "-v") { verboseMode      = new MyBooleanClass(true); };
+      if(string(argv[count]) == "-s") { shortMessageMode = new MyBooleanClass(true); };
+   };
+
+   if(!verboseMode)                    { verboseMode      = new MyBooleanClass();     };  // default is false
+   if(!shortMessageMode)               { shortMessageMode = new MyBooleanClass();     };  // default is false
+}
 
 /* fim de arquivo */
